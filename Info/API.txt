@@ -1,0 +1,6 @@
++ McenterNTW_Test
+Khóa API: 85a685014d0260509eaf
+Bí mật API: 293fa78e09e51d4d71f38d4ad36465f3456734b0
+Trang web ứng dụng:http://ntw.himovies.net
+Callback URL:
+http://ntw.himovies.net/apps/register

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2015-12-24 14:35:39
+Date: 2015-12-25 17:44:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -83,14 +83,33 @@ CREATE TABLE `net_channel` (
 DROP TABLE IF EXISTS `net_configuration`;
 CREATE TABLE `net_configuration` (
   `config_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `prefix` varchar(10) DEFAULT NULL,
   `name` varchar(50) DEFAULT NULL,
   `value` varchar(200) DEFAULT NULL,
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
   PRIMARY KEY (`config_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_configuration
+-- ----------------------------
+INSERT INTO `net_configuration` VALUES ('1', 'daily', 'api_key', '85a685014d0260509eaf', '1');
+INSERT INTO `net_configuration` VALUES ('2', 'daily', 'url_oauth', 'https://www.dailymotion.com/oauth/authorize?response_type=code&client_id={API_KEY}&redirect_uri={URL_CALLBACK}&scope=email+userinfo+manage_videos+manage_subscriptions', '1');
+INSERT INTO `net_configuration` VALUES ('3', 'daily', 'api_secret', '293fa78e09e51d4d71f38d4ad36465f3456734b0', '1');
+INSERT INTO `net_configuration` VALUES ('4', 'daily', 'url_callback', '/apps/register?', '1');
+INSERT INTO `net_configuration` VALUES ('5', 'daily', 'get_token', 'https://api.dailymotion.com/oauth/token', '1');
+
+-- ----------------------------
+-- Table structure for net_migrations
+-- ----------------------------
+DROP TABLE IF EXISTS `net_migrations`;
+CREATE TABLE `net_migrations` (
+  `migration` varchar(255) NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of net_migrations
 -- ----------------------------
 
 -- ----------------------------
@@ -101,13 +120,14 @@ CREATE TABLE `net_user` (
   `user_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
-  `email` varchar(200) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
   `country` varchar(50) DEFAULT NULL,
   `status` tinyint(1) DEFAULT '1' COMMENT '1: Good, 2: Bad',
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
   `create_date` datetime DEFAULT NULL,
   `update_date` datetime DEFAULT NULL,
-  PRIMARY KEY (`user_id`)
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `email_unq` (`email`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
