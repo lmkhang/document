@@ -3,4 +3,48 @@ Khóa API: 85a685014d0260509eaf
 Bí mật API: 293fa78e09e51d4d71f38d4ad36465f3456734b0
 Trang web ứng dụng:http://ntw.himovies.net
 Callback URL:
-http://ntw.himovies.net/apps/register
+http://ntw.himovies.net/apps/register?
+
++ McenterNTW_beta
+Khóa API:e9c8cb07ea0246f36197
+Bí mật API:48054bb5111c4221f48dbbc60413377aff63f1bf
+Trang web ứng dụng: http://mcenterntw.com/
+Callback URL:
+http://mcenterntw.com/apps/register
+
++ Mcenter Test
+Khóa API:a634a114cb1c91dcef77
+Trang web ứng dụng:http://test.mcenterntw.com
+Bí mật API:41c8909cedb7b9a87ddfde60d002bcde48c908ad
+Callback URL:
+http://test.mcenterntw.com/apps/register?
+
++ Domain
+godaddy.com
+mcenternwt.com
+mcenternwt/$MediaC3ntEr@NetWork!
+
++ Mail:
+contact@mcenterntw.com/$MediaC3ntEr@NetWork!
+no-reply@mcenterntw.com/$MediaC3ntEr@NetWork!$
+
++ VPS
+104.207.135.229
+administrator/casteam1@
+
++ Skype:
+https://join.skype.com/t5flexE0PVAH
+
++ Facebook:
+https://www.facebook.com/mcenterntw/
+
++ Google Plus:
+https://plus.google.com/u/2/114898032833350678488
+
++ Printest:
+https://plus.google.com/u/2/114898032833350678488
+
++ Forum:
+http://mcenterntw.com/forum/admin.php
+user: mcenterntw
+pass: 123456123456?@
