@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2015-12-28 18:47:00
+Date: 2016-01-04 17:00:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -48,8 +48,8 @@ CREATE TABLE `net_bank` (
   `full_name` varchar(100) DEFAULT NULL,
   `address` varchar(250) DEFAULT NULL,
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
-  `create_date` datetime DEFAULT NULL,
-  `update_date` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL,
   PRIMARY KEY (`bank_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -70,8 +70,8 @@ CREATE TABLE `net_channel` (
   `agree` tinyint(1) DEFAULT '2' COMMENT '1: Agree, 2: Disagree',
   `status` tinyint(1) DEFAULT '1' COMMENT '1: Good, 2: Bad',
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
-  `create_date` datetime DEFAULT NULL,
-  `updat_date` datetime DEFAULT NULL,
+  `create_at` datetime DEFAULT NULL,
+  `updat_at` datetime DEFAULT NULL,
   PRIMARY KEY (`user_id`,`channel_id`),
   UNIQUE KEY `email_unq` (`email`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -91,39 +91,37 @@ CREATE TABLE `net_configuration` (
   `value` varchar(200) DEFAULT NULL,
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
   PRIMARY KEY (`config_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_configuration
 -- ----------------------------
 INSERT INTO `net_configuration` VALUES ('1', 'daily', 'api_key', 'a634a114cb1c91dcef77', '1');
-INSERT INTO `net_configuration` VALUES ('2', 'daily', 'url_oauth', 'https://www.dailymotion.com/oauth/authorize?response_type=code&client_id={API_KEY}&redirect_uri={URL_CALLBACK}&scope=email+userinfo+manage_videos+manage_subscriptions', '1');
+INSERT INTO `net_configuration` VALUES ('2', 'daily', 'url_add_channel', 'https://www.dailymotion.com/oauth/authorize?response_type=code&client_id={API_KEY}&redirect_uri={URL_CALLBACK}&scope=email+userinfo+manage_videos+manage_subscriptions', '1');
 INSERT INTO `net_configuration` VALUES ('3', 'daily', 'api_secret', '41c8909cedb7b9a87ddfde60d002bcde48c908ad', '1');
-INSERT INTO `net_configuration` VALUES ('4', 'daily', 'url_callback', '/apps/register?', '1');
+INSERT INTO `net_configuration` VALUES ('4', 'daily', 'url_callback', '/dailymotion/register?', '1');
 INSERT INTO `net_configuration` VALUES ('5', 'daily', 'get_token', 'https://api.dailymotion.com/oauth/token', '1');
 INSERT INTO `net_configuration` VALUES ('6', 'social_ntw', 'fb', 'https://www.facebook.com/mcenterntw/', '1');
-INSERT INTO `net_configuration` VALUES ('7', 'social_ntw', 'google', '#', '1');
+INSERT INTO `net_configuration` VALUES ('7', 'social_ntw', 'google', 'https://plus.google.com/u/2/114898032833350678488', '1');
 INSERT INTO `net_configuration` VALUES ('8', 'social_ntw', 'twitter', '#', '1');
 INSERT INTO `net_configuration` VALUES ('9', 'social_ntw', 'tumblr', '#', '1');
-INSERT INTO `net_configuration` VALUES ('10', 'social_ntw', 'pinterest', '#', '1');
+INSERT INTO `net_configuration` VALUES ('10', 'social_ntw', 'pinterest', 'https://www.pinterest.com/mediacenternetw/', '1');
 INSERT INTO `net_configuration` VALUES ('11', 'social_ntw', 'dribbble', '#', '1');
 INSERT INTO `net_configuration` VALUES ('12', 'site', 'contact_email', 'contact@mcenterntw.com', '1');
 INSERT INTO `net_configuration` VALUES ('13', 'site', 'description', 'The Multi Channel Network on Dailymotion for people working at home with lots of convenience', '1');
 INSERT INTO `net_configuration` VALUES ('14', 'site', 'keywords', 'dailymotion, dailymotion monetization, make money online, mmo, dailymotion network, media center network, mcn, mcn dailymotion', '1');
-INSERT INTO `net_configuration` VALUES ('15', 'site', 'skype', 'aaaaa', '1');
-
--- ----------------------------
--- Table structure for net_migrations
--- ----------------------------
-DROP TABLE IF EXISTS `net_migrations`;
-CREATE TABLE `net_migrations` (
-  `migration` varchar(255) NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- ----------------------------
--- Records of net_migrations
--- ----------------------------
+INSERT INTO `net_configuration` VALUES ('15', 'social_ntw', 'skype', 'https://join.skype.com/t5flexE0PVAH', '1');
+INSERT INTO `net_configuration` VALUES ('16', 'site', 'salt', '!@12#$34', '1');
+INSERT INTO `net_configuration` VALUES ('17', 'daily', 'url_join', 'https://www.dailymotion.com/oauth/authorize?response_type=code&client_id={API_KEY}&redirect_uri={URL_CALLBACK}&scope=email+userinfo&refer=123', '1');
+INSERT INTO `net_configuration` VALUES ('18', 'fb', 'api_key', null, '1');
+INSERT INTO `net_configuration` VALUES ('19', 'fb', 'api_secret', null, '1');
+INSERT INTO `net_configuration` VALUES ('20', 'fb', 'url_oauth', null, '1');
+INSERT INTO `net_configuration` VALUES ('21', 'fb', 'url_callback', null, '1');
+INSERT INTO `net_configuration` VALUES ('22', 'site', 'active_expire', '24', '1');
+INSERT INTO `net_configuration` VALUES ('23', 'daily', 'url_callback_channel', '/dailymotion/add?', '1');
+INSERT INTO `net_configuration` VALUES ('24', 'daily', 'api_key_channel', 'e26d630f8cce18292850', '1');
+INSERT INTO `net_configuration` VALUES ('25', 'daily', 'api_secret_channel', 'fa8c66cbfe58995ce839dc8b93549453bf7b07af', '1');
+INSERT INTO `net_configuration` VALUES ('26', 'daily', 'url_get_info', 'https://api.dailymotion.com/user/{USER_ID}?fields=id,username,email,country,avatar_120_url,first_name,last_name,fullname', '1');
 
 -- ----------------------------
 -- Table structure for net_user
@@ -132,16 +130,23 @@ DROP TABLE IF EXISTS `net_user`;
 CREATE TABLE `net_user` (
   `user_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `refer` varchar(20) DEFAULT NULL,
+  `from_refer` varchar(20) DEFAULT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `full_name` varchar(200) DEFAULT NULL,
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
+  `gavatar` varchar(200) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `country` varchar(50) DEFAULT NULL,
+  `pin_code` varchar(6) DEFAULT NULL,
+  `registration_system` tinyint(1) DEFAULT '1' COMMENT '1: site, 2: dailymotion, 3: facebook, 4: google',
+  `active_code` varchar(100) DEFAULT NULL,
   `status` tinyint(1) DEFAULT '1' COMMENT '1: Good, 2: Bad',
-  `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
-  `create_date` datetime DEFAULT NULL,
-  `update_date` datetime DEFAULT NULL,
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `email_unq` (`email`) USING BTREE
+  `del_flg` tinyint(1) DEFAULT '0' COMMENT '0: not confirmed,1: activated, 2: deactivated',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------

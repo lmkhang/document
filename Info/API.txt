@@ -19,12 +19,21 @@ Bí mật API:41c8909cedb7b9a87ddfde60d002bcde48c908ad
 Callback URL:
 http://test.mcenterntw.com/apps/register?
 
++ Mcenter Test Channel
+Khóa API:e26d630f8cce18292850
+Bí mật API:fa8c66cbfe58995ce839dc8b93549453bf7b07af
+Trang web ứng dụng:http://test.mcenterntw.com
+Callback URL:
+http://test.mcenterntw.com/dailymotion/add?
+
 + Domain
 godaddy.com
 mcenternwt.com
 mcenternwt/$MediaC3ntEr@NetWork!
 
 + Mail:
+https://www.google.com/settings/security/lesssecureapps
+https://accounts.google.com/b/0/DisplayUnlockCaptcha
 contact@mcenterntw.com/$MediaC3ntEr@NetWork!
 no-reply@mcenterntw.com/$MediaC3ntEr@NetWork!$
 
