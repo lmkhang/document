@@ -26,6 +26,11 @@ Trang web ứng dụng:http://test.mcenterntw.com
 Callback URL:
 http://test.mcenterntw.com/dailymotion/add?
 
++ Facebook
+http://test.mcenterntw.com/facebook/register
+App ID: 1701752836736380
+App Secret: d9a59f4497d3e630fc5ca15b1d94d635
+
 + Domain
 godaddy.com
 mcenternwt.com

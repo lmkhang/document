@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-01-04 17:00:12
+Date: 2016-01-05 01:24:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -113,10 +113,10 @@ INSERT INTO `net_configuration` VALUES ('14', 'site', 'keywords', 'dailymotion, 
 INSERT INTO `net_configuration` VALUES ('15', 'social_ntw', 'skype', 'https://join.skype.com/t5flexE0PVAH', '1');
 INSERT INTO `net_configuration` VALUES ('16', 'site', 'salt', '!@12#$34', '1');
 INSERT INTO `net_configuration` VALUES ('17', 'daily', 'url_join', 'https://www.dailymotion.com/oauth/authorize?response_type=code&client_id={API_KEY}&redirect_uri={URL_CALLBACK}&scope=email+userinfo&refer=123', '1');
-INSERT INTO `net_configuration` VALUES ('18', 'fb', 'api_key', null, '1');
-INSERT INTO `net_configuration` VALUES ('19', 'fb', 'api_secret', null, '1');
-INSERT INTO `net_configuration` VALUES ('20', 'fb', 'url_oauth', null, '1');
-INSERT INTO `net_configuration` VALUES ('21', 'fb', 'url_callback', null, '1');
+INSERT INTO `net_configuration` VALUES ('18', 'fb', 'api_key', '1701752836736380', '1');
+INSERT INTO `net_configuration` VALUES ('19', 'fb', 'api_secret', 'd9a59f4497d3e630fc5ca15b1d94d635', '1');
+INSERT INTO `net_configuration` VALUES ('20', 'fb', 'scope', 'email,public_profile', '1');
+INSERT INTO `net_configuration` VALUES ('21', 'fb', 'url_callback', '/facebook/register', '1');
 INSERT INTO `net_configuration` VALUES ('22', 'site', 'active_expire', '24', '1');
 INSERT INTO `net_configuration` VALUES ('23', 'daily', 'url_callback_channel', '/dailymotion/add?', '1');
 INSERT INTO `net_configuration` VALUES ('24', 'daily', 'api_key_channel', 'e26d630f8cce18292850', '1');
