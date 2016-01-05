@@ -31,6 +31,11 @@ http://test.mcenterntw.com/facebook/register
 App ID: 1701752836736380
 App Secret: d9a59f4497d3e630fc5ca15b1d94d635
 
++ Google
+Client ID:  130556356834-2sivce7vq4etl3o844g89dfl2265rocs.apps.googleusercontent.com 
+Secret: NJHJXVNh0YfgL1GLeRnX2me_
+API KEY: AIzaSyA-ULa6KfLJRjT5WM_0Usd-Yk9QdIh1zYQ
+
 + Domain
 godaddy.com
 mcenternwt.com
@@ -62,3 +67,5 @@ https://www.pinterest.com/mediacenternetw/
 http://mcenterntw.com/forum/admin.php
 user: mcenterntw
 pass: 123456123456?@
+
+composer dump-autoload --optimize
