@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-01-06 01:07:44
+Date: 2016-01-10 15:33:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -141,11 +141,13 @@ CREATE TABLE `net_user` (
   `full_name` varchar(200) DEFAULT NULL,
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
-  `gavatar` varchar(200) DEFAULT NULL,
+  `gavatar` varchar(200) DEFAULT '/assets/img/logo.png',
   `email` varchar(100) DEFAULT NULL,
   `country` varchar(50) DEFAULT NULL,
   `pin_code` varchar(6) DEFAULT NULL,
+  `sign_contract` tinyint(1) DEFAULT '0' COMMENT '0: unsign, 1: signed',
   `registration_system` tinyint(1) DEFAULT '1' COMMENT '1: site, 2: dailymotion, 3: facebook, 4: google',
+  `confirm_payment_code` varchar(100) DEFAULT NULL,
   `active_code` varchar(100) DEFAULT NULL,
   `status` tinyint(1) DEFAULT '1' COMMENT '1: Good, 2: Bad',
   `del_flg` tinyint(1) DEFAULT '0' COMMENT '0: not confirmed,1: activated, 2: deactivated',
