@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-01-10 15:33:31
+Date: 2016-01-14 01:26:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -64,10 +64,10 @@ DROP TABLE IF EXISTS `net_channel`;
 CREATE TABLE `net_channel` (
   `user_id` bigint(20) unsigned NOT NULL,
   `channel_id` varchar(100) NOT NULL,
+  `channel_username` varchar(100) DEFAULT NULL,
   `channel_name` varchar(255) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `type` tinyint(1) DEFAULT '2' COMMENT '1: Main(Login), 2: child',
-  `agree` tinyint(1) DEFAULT '2' COMMENT '1: Agree, 2: Disagree',
+  `type` tinyint(1) DEFAULT '1' COMMENT 'for future',
   `status` tinyint(1) DEFAULT '1' COMMENT '1: Good, 2: Bad',
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
   `create_at` datetime DEFAULT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE `net_configuration` (
   `value` varchar(200) DEFAULT NULL,
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
   PRIMARY KEY (`config_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_configuration
@@ -122,11 +122,12 @@ INSERT INTO `net_configuration` VALUES ('23', 'daily', 'url_callback_channel', '
 INSERT INTO `net_configuration` VALUES ('24', 'daily', 'api_key_channel', 'e26d630f8cce18292850', '1');
 INSERT INTO `net_configuration` VALUES ('25', 'daily', 'api_secret_channel', 'fa8c66cbfe58995ce839dc8b93549453bf7b07af', '1');
 INSERT INTO `net_configuration` VALUES ('26', 'daily', 'url_get_info', 'https://api.dailymotion.com/user/{USER_ID}?fields=id,username,email,country,avatar_120_url,first_name,last_name,fullname', '1');
-INSERT INTO `net_configuration` VALUES ('27', 'google', 'api_key', 'AIzaSyA-ULa6KfLJRjT5WM_0Usd-Yk9QdIh1zYQ ', '1');
+INSERT INTO `net_configuration` VALUES ('27', 'google', 'api_key', 'AIzaSyA-ULa6KfLJRjT5WM_0Usd-Yk9QdIh1zYQ', '1');
 INSERT INTO `net_configuration` VALUES ('28', 'google', 'client_secret', 'NJHJXVNh0YfgL1GLeRnX2me_', '1');
 INSERT INTO `net_configuration` VALUES ('29', 'google', 'scope', 'https://www.googleapis.com/auth/userinfo.email,https://www.googleapis.com/auth/userinfo.profile', '1');
 INSERT INTO `net_configuration` VALUES ('30', 'google', 'url_callback', '/google/register', '1');
 INSERT INTO `net_configuration` VALUES ('31', 'google', 'client_id', '130556356834-2sivce7vq4etl3o844g89dfl2265rocs.apps.googleusercontent.com', '1');
+INSERT INTO `net_configuration` VALUES ('32', 'site', 'contract_file', '/download/contract_mcn_28_12_2015.pdf', '1');
 
 -- ----------------------------
 -- Table structure for net_user
@@ -143,9 +144,12 @@ CREATE TABLE `net_user` (
   `last_name` varchar(50) DEFAULT NULL,
   `gavatar` varchar(200) DEFAULT '/assets/img/logo.png',
   `email` varchar(100) DEFAULT NULL,
+  `payment_email` varchar(100) DEFAULT NULL,
   `country` varchar(50) DEFAULT NULL,
+  `about` text,
   `pin_code` varchar(6) DEFAULT NULL,
   `sign_contract` tinyint(1) DEFAULT '0' COMMENT '0: unsign, 1: signed',
+  `contract_file` varchar(100) DEFAULT NULL,
   `registration_system` tinyint(1) DEFAULT '1' COMMENT '1: site, 2: dailymotion, 3: facebook, 4: google',
   `confirm_payment_code` varchar(100) DEFAULT NULL,
   `active_code` varchar(100) DEFAULT NULL,
