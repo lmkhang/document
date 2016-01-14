@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-01-14 01:26:03
+Date: 2016-01-15 04:34:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -62,18 +62,18 @@ CREATE TABLE `net_bank` (
 -- ----------------------------
 DROP TABLE IF EXISTS `net_channel`;
 CREATE TABLE `net_channel` (
-  `user_id` bigint(20) unsigned NOT NULL,
-  `channel_id` varchar(100) NOT NULL,
-  `channel_username` varchar(100) DEFAULT NULL,
-  `channel_name` varchar(255) DEFAULT NULL,
+  `channel_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) unsigned DEFAULT NULL,
+  `daily_channel_id` varchar(100) DEFAULT NULL,
+  `daily_channel_username` varchar(100) DEFAULT NULL,
+  `daily_channel_name` varchar(255) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `type` tinyint(1) DEFAULT '1' COMMENT 'for future',
-  `status` tinyint(1) DEFAULT '1' COMMENT '1: Good, 2: Bad',
+  `status` tinyint(1) DEFAULT '3' COMMENT '1: Approved, 2: Suspended, 3: Pending, 4: Blocked',
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
-  `create_at` datetime DEFAULT NULL,
-  `updat_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`user_id`,`channel_id`),
-  UNIQUE KEY `email_unq` (`email`) USING BTREE
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`channel_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -91,7 +91,7 @@ CREATE TABLE `net_configuration` (
   `value` varchar(200) DEFAULT NULL,
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
   PRIMARY KEY (`config_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_configuration
@@ -118,16 +118,17 @@ INSERT INTO `net_configuration` VALUES ('19', 'fb', 'api_secret', 'd9a59f4497d3e
 INSERT INTO `net_configuration` VALUES ('20', 'fb', 'scope', 'email,public_profile', '1');
 INSERT INTO `net_configuration` VALUES ('21', 'fb', 'url_callback', '/facebook/register', '1');
 INSERT INTO `net_configuration` VALUES ('22', 'site', 'active_expire', '24', '1');
-INSERT INTO `net_configuration` VALUES ('23', 'daily', 'url_callback_channel', '/dailymotion/add?', '1');
+INSERT INTO `net_configuration` VALUES ('23', 'daily', 'url_callback_channel', '/dashboard/channels/dailymotion/add?', '1');
 INSERT INTO `net_configuration` VALUES ('24', 'daily', 'api_key_channel', 'e26d630f8cce18292850', '1');
 INSERT INTO `net_configuration` VALUES ('25', 'daily', 'api_secret_channel', 'fa8c66cbfe58995ce839dc8b93549453bf7b07af', '1');
-INSERT INTO `net_configuration` VALUES ('26', 'daily', 'url_get_info', 'https://api.dailymotion.com/user/{USER_ID}?fields=id,username,email,country,avatar_120_url,first_name,last_name,fullname', '1');
+INSERT INTO `net_configuration` VALUES ('26', 'daily', 'url_get_info', 'https://api.dailymotion.com/user/{USER_ID}?fields=id,username,email,country,avatar_120_url,first_name,last_name,fullname,screenname', '1');
 INSERT INTO `net_configuration` VALUES ('27', 'google', 'api_key', 'AIzaSyA-ULa6KfLJRjT5WM_0Usd-Yk9QdIh1zYQ', '1');
 INSERT INTO `net_configuration` VALUES ('28', 'google', 'client_secret', 'NJHJXVNh0YfgL1GLeRnX2me_', '1');
 INSERT INTO `net_configuration` VALUES ('29', 'google', 'scope', 'https://www.googleapis.com/auth/userinfo.email,https://www.googleapis.com/auth/userinfo.profile', '1');
 INSERT INTO `net_configuration` VALUES ('30', 'google', 'url_callback', '/google/register', '1');
 INSERT INTO `net_configuration` VALUES ('31', 'google', 'client_id', '130556356834-2sivce7vq4etl3o844g89dfl2265rocs.apps.googleusercontent.com', '1');
 INSERT INTO `net_configuration` VALUES ('32', 'site', 'contract_file', '/download/contract_mcn_28_12_2015.pdf', '1');
+INSERT INTO `net_configuration` VALUES ('33', 'site', 'pagination', '15', '1');
 
 -- ----------------------------
 -- Table structure for net_user
