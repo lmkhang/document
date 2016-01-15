@@ -69,4 +69,9 @@ http://mcenterntw.com/forum/admin.php
 user: mcenterntw
 pass: 123456123456?@
 
++ McenterNTW Admin
+url: http://test.mcenterntw.com/adminntw/
+user: admin
+pass: 123123123!@#
+
 composer dump-autoload --optimize

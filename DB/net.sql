@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-01-15 04:34:32
+Date: 2016-01-15 15:32:19
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,17 +23,21 @@ CREATE TABLE `net_admin` (
   `admin_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
+  `gavatar` varchar(100) DEFAULT '/assets/img/logo.png',
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
   `email` varchar(150) DEFAULT NULL,
   `group` tinyint(1) DEFAULT '2' COMMENT '1: Admin, 2: Moderator',
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`admin_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_admin
 -- ----------------------------
+INSERT INTO `net_admin` VALUES ('1', 'admin', '940e4ac554a0f7cd4b21a6dd9b481adb', '/assets/img/logo.png', 'Admin 123', 'MCenterNTW', 'admin@mcenterntw.com', '1', '1', '2016-01-15 15:18:53', '2016-01-15 08:19:33');
 
 -- ----------------------------
 -- Table structure for net_bank
@@ -91,7 +95,7 @@ CREATE TABLE `net_configuration` (
   `value` varchar(200) DEFAULT NULL,
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
   PRIMARY KEY (`config_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_configuration
@@ -129,6 +133,7 @@ INSERT INTO `net_configuration` VALUES ('30', 'google', 'url_callback', '/google
 INSERT INTO `net_configuration` VALUES ('31', 'google', 'client_id', '130556356834-2sivce7vq4etl3o844g89dfl2265rocs.apps.googleusercontent.com', '1');
 INSERT INTO `net_configuration` VALUES ('32', 'site', 'contract_file', '/download/contract_mcn_28_12_2015.pdf', '1');
 INSERT INTO `net_configuration` VALUES ('33', 'site', 'pagination', '15', '1');
+INSERT INTO `net_configuration` VALUES ('34', 'admin', 'salt', '!@12#$34@*&%', '1');
 
 -- ----------------------------
 -- Table structure for net_user
