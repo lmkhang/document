@@ -74,4 +74,9 @@ url: http://test.mcenterntw.com/adminntw/
 user: admin
 pass: 123123123!@#
 
++ Command:
 composer dump-autoload --optimize
+composer dumpautoload
+php artisan optimize
+php artisan config:cache
+C:\xampp56\php\php.exe artisan config:cache

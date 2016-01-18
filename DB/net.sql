@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-01-15 15:32:19
+Date: 2016-01-19 01:45:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -75,14 +75,17 @@ CREATE TABLE `net_channel` (
   `type` tinyint(1) DEFAULT '1' COMMENT 'for future',
   `status` tinyint(1) DEFAULT '3' COMMENT '1: Approved, 2: Suspended, 3: Pending, 4: Blocked',
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
+  `approved_at` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`channel_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_channel
 -- ----------------------------
+INSERT INTO `net_channel` VALUES ('1', '2', 'x1p336p', 'WTWS', 'WTWS', 'ddddd@gmail.com', '1', '1', '1', '2016-01-18 12:02:21', '2016-01-16 21:53:36', '2016-01-18 12:02:21');
+INSERT INTO `net_channel` VALUES ('2', '2', 'x1m0ytg', 'surememberher', 'surememberher', 'ddddd2@gmail.com', '1', '1', '1', '2016-01-18 12:02:21', '2016-01-16 21:53:36', '2016-01-18 12:02:21');
 
 -- ----------------------------
 -- Table structure for net_configuration
@@ -136,6 +139,35 @@ INSERT INTO `net_configuration` VALUES ('33', 'site', 'pagination', '15', '1');
 INSERT INTO `net_configuration` VALUES ('34', 'admin', 'salt', '!@12#$34@*&%', '1');
 
 -- ----------------------------
+-- Table structure for net_earning_date
+-- ----------------------------
+DROP TABLE IF EXISTS `net_earning_date`;
+CREATE TABLE `net_earning_date` (
+  `daily_channel_id` varchar(100) NOT NULL,
+  `daily_channel_username` varchar(100) NOT NULL,
+  `parent_username` varchar(100) NOT NULL,
+  `earning_date` date NOT NULL,
+  `estimated_earnings` double(5,3) DEFAULT NULL,
+  `impressions` int(10) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`daily_channel_id`,`daily_channel_username`,`earning_date`,`parent_username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of net_earning_date
+-- ----------------------------
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-22', '0.670', '117', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-23', '0.440', '54', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-24', '1.020', '163', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-25', '0.630', '78', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-26', '0.090', '18', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-27', '1.010', '169', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-28', '0.240', '38', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-29', '0.790', '141', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-30', '0.420', '74', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
+
+-- ----------------------------
 -- Table structure for net_user
 -- ----------------------------
 DROP TABLE IF EXISTS `net_user`;
@@ -164,8 +196,10 @@ CREATE TABLE `net_user` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_user
 -- ----------------------------
+INSERT INTO `net_user` VALUES ('1', '1111', null, 'lmkhang', '123123', 'Khang', 'Khang', 'Khang', '/assets/img/logo.png', 'kkkk@gmail.com', 'kkkk@gmail.com', null, null, '123421', '1', null, '1', null, null, '1', '1', '2016-01-16 21:52:51', null);
+INSERT INTO `net_user` VALUES ('2', '9z7FZcsqdB1n9E1i1', '', 'lmkhang1', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, '12', '12', '/assets/img/logo.png', 'nhacso0021@gmail.com', 'nhacso0021@gmail.com', null, null, '7c52db', '1', null, '1', null, 'kosZ45103befdc595254aaba43041ead66410dd0a00f250c15da76b16e6c3f4667d6dh0FHG', '1', '1', '2016-01-18 10:39:40', '2016-01-18 10:39:40');
