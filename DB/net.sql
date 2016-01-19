@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-01-19 01:45:45
+Date: 2016-01-20 02:39:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -40,28 +40,6 @@ CREATE TABLE `net_admin` (
 INSERT INTO `net_admin` VALUES ('1', 'admin', '940e4ac554a0f7cd4b21a6dd9b481adb', '/assets/img/logo.png', 'Admin 123', 'MCenterNTW', 'admin@mcenterntw.com', '1', '1', '2016-01-15 15:18:53', '2016-01-15 08:19:33');
 
 -- ----------------------------
--- Table structure for net_bank
--- ----------------------------
-DROP TABLE IF EXISTS `net_bank`;
-CREATE TABLE `net_bank` (
-  `bank_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(20) unsigned DEFAULT NULL,
-  `bank_name` varchar(255) DEFAULT NULL,
-  `id_of_bank` varchar(255) DEFAULT NULL,
-  `phone` varchar(15) DEFAULT NULL,
-  `full_name` varchar(100) DEFAULT NULL,
-  `address` varchar(250) DEFAULT NULL,
-  `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
-  `created_at` datetime DEFAULT NULL,
-  `update_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`bank_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- ----------------------------
--- Records of net_bank
--- ----------------------------
-
--- ----------------------------
 -- Table structure for net_channel
 -- ----------------------------
 DROP TABLE IF EXISTS `net_channel`;
@@ -84,7 +62,7 @@ CREATE TABLE `net_channel` (
 -- ----------------------------
 -- Records of net_channel
 -- ----------------------------
-INSERT INTO `net_channel` VALUES ('1', '2', 'x1p336p', 'WTWS', 'WTWS', 'ddddd@gmail.com', '1', '1', '1', '2016-01-18 12:02:21', '2016-01-16 21:53:36', '2016-01-18 12:02:21');
+INSERT INTO `net_channel` VALUES ('1', '2', 'x1p336p', 'WTWS', 'WTWS', 'ddddd@gmail.com', '1', '1', '1', '2016-01-19 00:00:00', '2016-01-16 21:53:36', '2016-01-19 18:13:04');
 INSERT INTO `net_channel` VALUES ('2', '2', 'x1m0ytg', 'surememberher', 'surememberher', 'ddddd2@gmail.com', '1', '1', '1', '2016-01-18 12:02:21', '2016-01-16 21:53:36', '2016-01-18 12:02:21');
 
 -- ----------------------------
@@ -98,7 +76,7 @@ CREATE TABLE `net_configuration` (
   `value` varchar(200) DEFAULT NULL,
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
   PRIMARY KEY (`config_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_configuration
@@ -137,6 +115,7 @@ INSERT INTO `net_configuration` VALUES ('31', 'google', 'client_id', '1305563568
 INSERT INTO `net_configuration` VALUES ('32', 'site', 'contract_file', '/download/contract_mcn_28_12_2015.pdf', '1');
 INSERT INTO `net_configuration` VALUES ('33', 'site', 'pagination', '15', '1');
 INSERT INTO `net_configuration` VALUES ('34', 'admin', 'salt', '!@12#$34@*&%', '1');
+INSERT INTO `net_configuration` VALUES ('35', 'site', 'payment_notice', 'Please confirm all your information before submitting to us.', '1');
 
 -- ----------------------------
 -- Table structure for net_earning_date
@@ -157,15 +136,58 @@ CREATE TABLE `net_earning_date` (
 -- ----------------------------
 -- Records of net_earning_date
 -- ----------------------------
-INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-22', '0.670', '117', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
-INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-23', '0.440', '54', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
-INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-24', '1.020', '163', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
-INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-25', '0.630', '78', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
-INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-26', '0.090', '18', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
-INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-27', '1.010', '169', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
-INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-28', '0.240', '38', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
-INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-29', '0.790', '141', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
-INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-30', '0.420', '74', '2016-01-18 18:44:47', '2016-01-18 18:44:47');
+
+-- ----------------------------
+-- Table structure for net_m_banks
+-- ----------------------------
+DROP TABLE IF EXISTS `net_m_banks`;
+CREATE TABLE `net_m_banks` (
+  `bank_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `bank_name` varchar(100) DEFAULT NULL,
+  `country` varchar(20) DEFAULT NULL,
+  `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
+  PRIMARY KEY (`bank_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of net_m_banks
+-- ----------------------------
+INSERT INTO `net_m_banks` VALUES ('1', 'ACB', 'vn', '1');
+INSERT INTO `net_m_banks` VALUES ('2', 'Agribank', 'vn', '1');
+INSERT INTO `net_m_banks` VALUES ('3', 'BIDV', 'vn', '1');
+INSERT INTO `net_m_banks` VALUES ('4', 'DAB', 'vn', '1');
+INSERT INTO `net_m_banks` VALUES ('5', 'Techcombank', 'vn', '1');
+INSERT INTO `net_m_banks` VALUES ('6', 'Vietcombank', 'vn', '1');
+INSERT INTO `net_m_banks` VALUES ('7', 'Vietin', 'vn', '1');
+
+-- ----------------------------
+-- Table structure for net_payment
+-- ----------------------------
+DROP TABLE IF EXISTS `net_payment`;
+CREATE TABLE `net_payment` (
+  `user_id` bigint(20) unsigned NOT NULL,
+  `bank_id` int(10) unsigned NOT NULL,
+  `id_number_bank` varchar(30) DEFAULT NULL COMMENT 'The ID number of BANK',
+  `phone` varchar(15) DEFAULT NULL,
+  `last_name` varchar(100) DEFAULT NULL,
+  `mid_name` varchar(100) DEFAULT NULL,
+  `first_name` varchar(100) DEFAULT NULL,
+  `address` varchar(250) DEFAULT NULL,
+  `ward` varchar(250) DEFAULT NULL,
+  `district` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `contact_email` varchar(100) DEFAULT NULL,
+  `paypal_email` varchar(100) DEFAULT NULL,
+  `payment_method` tinyint(1) DEFAULT '1' COMMENT '1: Sharemoney (Bank), 2: Paypal, 3: Other',
+  `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
+  `created_at` datetime NOT NULL,
+  `update_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`user_id`,`bank_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of net_payment
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for net_user
