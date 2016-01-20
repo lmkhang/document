@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-01-20 02:39:55
+Date: 2016-01-21 04:58:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -166,7 +166,7 @@ INSERT INTO `net_m_banks` VALUES ('7', 'Vietin', 'vn', '1');
 DROP TABLE IF EXISTS `net_payment`;
 CREATE TABLE `net_payment` (
   `user_id` bigint(20) unsigned NOT NULL,
-  `bank_id` int(10) unsigned NOT NULL,
+  `bank_id` int(10) unsigned DEFAULT NULL,
   `id_number_bank` varchar(30) DEFAULT NULL COMMENT 'The ID number of BANK',
   `phone` varchar(15) DEFAULT NULL,
   `last_name` varchar(100) DEFAULT NULL,
@@ -180,9 +180,9 @@ CREATE TABLE `net_payment` (
   `paypal_email` varchar(100) DEFAULT NULL,
   `payment_method` tinyint(1) DEFAULT '1' COMMENT '1: Sharemoney (Bank), 2: Paypal, 3: Other',
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
-  `created_at` datetime NOT NULL,
-  `update_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`user_id`,`bank_id`)
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
