@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-01-21 04:58:29
+Date: 2016-01-26 15:54:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -57,13 +57,14 @@ CREATE TABLE `net_channel` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`channel_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_channel
 -- ----------------------------
 INSERT INTO `net_channel` VALUES ('1', '2', 'x1p336p', 'WTWS', 'WTWS', 'ddddd@gmail.com', '1', '1', '1', '2016-01-19 00:00:00', '2016-01-16 21:53:36', '2016-01-19 18:13:04');
 INSERT INTO `net_channel` VALUES ('2', '2', 'x1m0ytg', 'surememberher', 'surememberher', 'ddddd2@gmail.com', '1', '1', '1', '2016-01-18 12:02:21', '2016-01-16 21:53:36', '2016-01-18 12:02:21');
+INSERT INTO `net_channel` VALUES ('3', '2', 'x1lyuqe', 'thamhiemvn2014', 'thamhiemvn2014', 'ddddd23@gmail.com', '1', '1', '1', '2016-01-18 12:02:21', '2016-01-18 12:02:21', '2016-01-18 12:02:21');
 
 -- ----------------------------
 -- Table structure for net_configuration
@@ -126,7 +127,7 @@ CREATE TABLE `net_earning_date` (
   `daily_channel_username` varchar(100) NOT NULL,
   `parent_username` varchar(100) NOT NULL,
   `earning_date` date NOT NULL,
-  `estimated_earnings` double(5,3) DEFAULT NULL,
+  `estimated_earnings` double(10,3) DEFAULT NULL,
   `impressions` int(10) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
@@ -136,6 +137,57 @@ CREATE TABLE `net_earning_date` (
 -- ----------------------------
 -- Records of net_earning_date
 -- ----------------------------
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-01', '3.020', '820', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-02', '3.470', '974', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-03', '2.190', '683', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-04', '2.590', '659', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-05', '3.850', '957', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-06', '3.830', '990', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-07', '3.240', '820', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-08', '3.820', '890', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-09', '3.990', '908', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-10', '2.980', '679', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-11', '3.940', '1339', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-12', '11.010', '7000', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-13', '7.170', '3289', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-14', '3.570', '798', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-15', '2.180', '660', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-16', '4.170', '784', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-17', '3.740', '825', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-18', '4.940', '990', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-19', '5.410', '1094', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-20', '4.180', '905', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-21', '4.620', '974', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-22', '5.770', '1098', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-23', '5.520', '1071', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-24', '4.680', '940', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-25', '4.050', '806', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-26', '4.410', '895', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-27', '3.140', '796', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-28', '3.270', '788', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-29', '4.670', '1071', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-30', '4.970', '1200', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-31', '3.470', '893', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_earning_date` VALUES ('x1m0ytg', 'surememberher', 'mcenterntw', '2015-12-18', '0.020', '4', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1m0ytg', 'surememberher', 'mcenterntw', '2015-12-20', '0.010', '2', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1m0ytg', 'surememberher', 'mcenterntw', '2015-12-21', '0.000', '2', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1m0ytg', 'surememberher', 'mcenterntw', '2015-12-22', '0.000', '2', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1m0ytg', 'surememberher', 'mcenterntw', '2015-12-23', '0.000', '1', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1m0ytg', 'surememberher', 'mcenterntw', '2015-12-25', '0.010', '3', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1m0ytg', 'surememberher', 'mcenterntw', '2015-12-26', '0.010', '5', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1m0ytg', 'surememberher', 'mcenterntw', '2015-12-27', '0.000', '2', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1m0ytg', 'surememberher', 'mcenterntw', '2015-12-28', '0.010', '2', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1m0ytg', 'surememberher', 'mcenterntw', '2015-12-29', '0.010', '1', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1m0ytg', 'surememberher', 'mcenterntw', '2015-12-31', '0.010', '2', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-22', '0.670', '117', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-23', '0.440', '54', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-24', '1.020', '163', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-25', '0.630', '78', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-26', '0.090', '18', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-27', '1.010', '169', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-28', '0.240', '38', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-29', '0.790', '141', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_earning_date` VALUES ('x1p336p', 'WTWS', 'mcenterntw', '2015-01-30', '0.420', '74', '2016-01-26 06:46:25', '2016-01-26 06:46:25');
 
 -- ----------------------------
 -- Table structure for net_m_banks
@@ -223,5 +275,49 @@ CREATE TABLE `net_user` (
 -- ----------------------------
 -- Records of net_user
 -- ----------------------------
-INSERT INTO `net_user` VALUES ('1', '1111', null, 'lmkhang', '123123', 'Khang', 'Khang', 'Khang', '/assets/img/logo.png', 'kkkk@gmail.com', 'kkkk@gmail.com', null, null, '123421', '1', null, '1', null, null, '1', '1', '2016-01-16 21:52:51', null);
-INSERT INTO `net_user` VALUES ('2', '9z7FZcsqdB1n9E1i1', '', 'lmkhang1', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, '12', '12', '/assets/img/logo.png', 'nhacso0021@gmail.com', 'nhacso0021@gmail.com', null, null, '7c52db', '1', null, '1', null, 'kosZ45103befdc595254aaba43041ead66410dd0a00f250c15da76b16e6c3f4667d6dh0FHG', '1', '1', '2016-01-18 10:39:40', '2016-01-18 10:39:40');
+INSERT INTO `net_user` VALUES ('1', '7y6seta0201jSKTH1', '', 'lmkhang', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'Khang', 'Le', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, '499669', '1', null, '1', null, '', '1', '1', '2016-01-24 06:07:03', '2016-01-24 06:07:10');
+INSERT INTO `net_user` VALUES ('2', '7y6seta0201jSKTH1', '', 'lmkhang1', 'cc4a8fcc6823b2dfa8a5b198a30df279', '', 'Khang', 'Le', '/assets/img/logo.png', 'nhacso0021@gmail.com', '', '', '', '499669', '1', '', '1', '', '', '1', '1', '2016-01-24 06:07:03', '2016-01-24 06:07:10');
+
+-- ----------------------------
+-- Table structure for net_user_income_expenditure
+-- ----------------------------
+DROP TABLE IF EXISTS `net_user_income_expenditure`;
+CREATE TABLE `net_user_income_expenditure` (
+  `user_id` bigint(20) unsigned NOT NULL,
+  `daily_channel_id` varchar(100) NOT NULL,
+  `amount` double(15,2) DEFAULT NULL,
+  `type` tinyint(1) DEFAULT '1' COMMENT '1: income, 2: withdraw',
+  `date` date NOT NULL,
+  `action` tinyint(1) DEFAULT '1' COMMENT '1: system, 2: people',
+  `reason` text,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`user_id`,`daily_channel_id`,`date`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of net_user_income_expenditure
+-- ----------------------------
+INSERT INTO `net_user_income_expenditure` VALUES ('2', 'x1lyuqe', '131.86', '1', '2015-12-13', '2', 'Adwards from Event', '2016-01-26 06:46:46', '2016-01-26 06:46:46');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', 'x1m0ytg', '0.08', '1', '2015-12-28', '1', null, '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', 'x1p336p', '5.31', '1', '2015-01-22', '1', null, '2016-01-26 06:46:25', '2016-01-26 06:46:25');
+
+-- ----------------------------
+-- Table structure for net_user_stats
+-- ----------------------------
+DROP TABLE IF EXISTS `net_user_stats`;
+CREATE TABLE `net_user_stats` (
+  `user_id` bigint(20) unsigned NOT NULL,
+  `total` double(15,2) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT '1' COMMENT '1: Good, 2: Bad',
+  `del_flg` tinyint(1) DEFAULT '0' COMMENT '0: not confirmed,1: activated, 2: deactivated',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of net_user_stats
+-- ----------------------------
+INSERT INTO `net_user_stats` VALUES ('1', '0.00', '1', '1', '2016-01-24 06:07:03', '2016-01-24 06:07:10');
+INSERT INTO `net_user_stats` VALUES ('2', '138.86', '1', '1', '2016-01-24 06:07:03', '2016-01-26 06:46:46');
