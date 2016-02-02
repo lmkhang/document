@@ -1,16 +1,26 @@
-+ McenterNTW_Test
-Khóa API: 85a685014d0260509eaf
-Bí mật API: 293fa78e09e51d4d71f38d4ad36465f3456734b0
-Trang web ứng dụng:http://ntw.himovies.net
++ McenterNTW - Register/Login ACCOUNT - Official (thamhiemvn2014)
+Khóa API:85a685014d0260509eaf
+Bí mật API:293fa78e09e51d4d71f38d4ad36465f3456734b0
+Trang web ứng dụng: http://mcenterntw.com
 Callback URL:
-http://ntw.himovies.net/apps/register?
+http://mcenterntw.com/dailymotion/register?
 
-+ McenterNTW_beta
++ McenterNTW - Add Channels - Official (thamhiemvn2014)
 Khóa API:e9c8cb07ea0246f36197
 Bí mật API:48054bb5111c4221f48dbbc60413377aff63f1bf
-Trang web ứng dụng: http://mcenterntw.com/
+Trang web ứng dụng:http://mcenterntw.com
 Callback URL:
-http://mcenterntw.com/apps/register
+http://mcenterntw.com/dashboard/channels/dailymotion/add?
+
++ Facebook - Official (itsfunvid/123456?@)
+http://mcenterntw.com/facebook/register
+App ID: 992015200861367
+App Secret: 992b644a03fca89eeae572074e1232a2
+
++ Google - Official (nhacso002)
+Client ID:  494599569762-023etasfl0lk945ook7rs38mdd0llk54.apps.googleusercontent.com
+Secret: A3YSd5Z8dOdTjG8Gfo0fRwGz
+API KEY: AIzaSyDPWweScSiNvOGUnd7ZSt2J28uDz9YDJHs
 
 + Mcenter Test
 Khóa API:a634a114cb1c91dcef77
