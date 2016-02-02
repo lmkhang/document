@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-02-02 02:11:38
+Date: 2016-02-02 13:49:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -67,10 +67,10 @@ INSERT INTO `net_channel` VALUES ('2', '2', 'x1m0ytg', 'surememberher', 'suremem
 INSERT INTO `net_channel` VALUES ('3', '2', 'x1lyuqe', 'thamhiemvn2014', 'thamhiemvn2014', 'ddddd23@gmail.com', '1', '1', '1', '2016-01-18 12:02:21', '2016-01-18 12:02:21', '2016-01-18 12:02:21');
 
 -- ----------------------------
--- Table structure for net_channel_income_expenditure
+-- Table structure for net_channel_income
 -- ----------------------------
-DROP TABLE IF EXISTS `net_channel_income_expenditure`;
-CREATE TABLE `net_channel_income_expenditure` (
+DROP TABLE IF EXISTS `net_channel_income`;
+CREATE TABLE `net_channel_income` (
   `user_id` bigint(20) unsigned NOT NULL,
   `daily_channel_id` varchar(100) NOT NULL,
   `amount` double(15,2) DEFAULT NULL,
@@ -84,11 +84,11 @@ CREATE TABLE `net_channel_income_expenditure` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
--- Records of net_channel_income_expenditure
+-- Records of net_channel_income
 -- ----------------------------
-INSERT INTO `net_channel_income_expenditure` VALUES ('2', 'x1lyuqe', '131.86', '1', '2015-12-13', '1', null, '2016-02-01 06:40:49', '2016-02-01 06:40:49');
-INSERT INTO `net_channel_income_expenditure` VALUES ('2', 'x1m0ytg', '0.08', '1', '2015-12-28', '1', null, '2016-02-01 06:40:49', '2016-02-01 06:40:49');
-INSERT INTO `net_channel_income_expenditure` VALUES ('2', 'x1p336p', '5.31', '1', '2015-01-22', '1', null, '2016-02-01 06:40:49', '2016-02-01 06:40:49');
+INSERT INTO `net_channel_income` VALUES ('2', 'x1lyuqe', '131.86', '1', '2015-12-13', '1', null, '2016-02-01 06:40:49', '2016-02-01 06:40:49');
+INSERT INTO `net_channel_income` VALUES ('2', 'x1m0ytg', '0.08', '1', '2015-12-28', '1', null, '2016-02-01 06:40:49', '2016-02-01 06:40:49');
+INSERT INTO `net_channel_income` VALUES ('2', 'x1p336p', '5.31', '1', '2015-01-22', '1', null, '2016-02-01 06:40:49', '2016-02-01 06:40:49');
 
 -- ----------------------------
 -- Table structure for net_configuration
@@ -357,6 +357,30 @@ CREATE TABLE `net_user_income_expenditure` (
 -- ----------------------------
 INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.61', '1', '2015-02-01 06:40:49', '1', null, '2015-02-01 06:40:49', '2015-02-01 06:40:49');
 INSERT INTO `net_user_income_expenditure` VALUES ('2', '137.25', '1', '2016-02-01 06:40:49', '1', '', '2016-02-01 06:40:49', '2016-02-01 06:40:49');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:11:22', '2', '222', '2016-02-02 06:11:22', '2016-02-02 06:11:22');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:13:14', '2', '2222', '2016-02-02 06:13:14', '2016-02-02 06:13:14');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '12.00', '1', '2016-02-02 06:14:32', '2', '222', '2016-02-02 06:14:32', '2016-02-02 06:14:32');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:14:57', '2', '22', '2016-02-02 06:14:57', '2016-02-02 06:14:57');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:15:33', '2', '222', '2016-02-02 06:15:33', '2016-02-02 06:15:33');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:16:15', '2', '222', '2016-02-02 06:16:15', '2016-02-02 06:16:15');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:16:44', '2', '2222', '2016-02-02 06:16:44', '2016-02-02 06:16:44');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:17:27', '2', '222', '2016-02-02 06:17:27', '2016-02-02 06:17:27');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:17:37', '2', '2222', '2016-02-02 06:17:37', '2016-02-02 06:17:37');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:18:18', '2', '222', '2016-02-02 06:18:18', '2016-02-02 06:18:18');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:23:04', '2', '22', '2016-02-02 06:23:04', '2016-02-02 06:23:04');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:23:32', '2', '22', '2016-02-02 06:23:32', '2016-02-02 06:23:32');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:27:22', '2', '22', '2016-02-02 06:27:22', '2016-02-02 06:27:22');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:27:53', '2', '22', '2016-02-02 06:27:53', '2016-02-02 06:27:53');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:28:00', '2', '22', '2016-02-02 06:28:00', '2016-02-02 06:28:00');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:28:19', '2', '222', '2016-02-02 06:28:19', '2016-02-02 06:28:19');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:29:21', '2', '222', '2016-02-02 06:29:21', '2016-02-02 06:29:21');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:29:47', '2', '22', '2016-02-02 06:29:47', '2016-02-02 06:29:47');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '10.01', '1', '2016-02-02 06:30:48', '2', 'Không có gì', '2016-02-02 06:30:48', '2016-02-02 06:30:48');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.86', '2', '2016-02-02 06:36:11', '2', '222', '2016-02-02 06:36:11', '2016-02-02 06:36:11');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '2', '2016-02-02 06:48:40', '2', '222', '2016-02-02 06:48:40', '2016-02-02 06:48:40');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '1', '2016-02-02 06:48:47', '2', '2222', '2016-02-02 06:48:47', '2016-02-02 06:48:47');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '1.00', '2', '2016-02-02 06:48:54', '2', '2222', '2016-02-02 06:48:54', '2016-02-02 06:48:54');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '4.00', '1', '2016-02-02 06:49:19', '2', '2222', '2016-02-02 06:49:19', '2016-02-02 06:49:19');
 
 -- ----------------------------
 -- Table structure for net_user_stats
@@ -376,4 +400,4 @@ CREATE TABLE `net_user_stats` (
 -- Records of net_user_stats
 -- ----------------------------
 INSERT INTO `net_user_stats` VALUES ('1', '0.00', '1', '1', '2016-01-24 06:07:03', '2016-02-01 06:40:49');
-INSERT INTO `net_user_stats` VALUES ('2', '138.86', '1', '1', '2016-01-24 06:07:03', '2016-02-01 06:40:49');
+INSERT INTO `net_user_stats` VALUES ('2', '179.01', '1', '1', '2016-01-24 06:07:03', '2016-02-02 06:49:19');
