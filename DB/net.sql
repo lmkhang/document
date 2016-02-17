@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-02-05 22:56:04
+Date: 2016-02-17 16:30:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -62,10 +62,7 @@ CREATE TABLE `net_channel` (
 -- ----------------------------
 -- Records of net_channel
 -- ----------------------------
-INSERT INTO `net_channel` VALUES ('2', '2', 'x1m0ytg', 'surememberher', 'surememberher', 'ddddd2@gmail.com', '1', '2', '1', '2016-02-05 00:00:00', '2016-01-16 21:53:36', '2016-02-05 06:04:37');
 INSERT INTO `net_channel` VALUES ('3', '2', 'x1lyuqe', 'thamhiemvn2014', 'thamhiemvn2014', 'ddddd23@gmail.com', '1', '1', '1', '2015-02-05 00:00:00', '2016-01-18 12:02:21', '2016-02-05 14:23:20');
-INSERT INTO `net_channel` VALUES ('4', '2', 'x1ma1fh', 'fvine', 'fvine', 'fvine@gmail.com', '1', '4', '1', '2015-02-05 00:00:00', '2015-02-05 00:00:00', '2015-02-05 00:00:00');
-INSERT INTO `net_channel` VALUES ('5', '2', 'x1lzmct', 'cartoon365', 'cartoon365', 'cartoon365@gmail.com', '1', '3', '1', '2015-02-05 00:00:00', '2015-02-05 00:00:00', '2015-02-05 00:00:00');
 
 -- ----------------------------
 -- Table structure for net_channel_income
@@ -91,6 +88,11 @@ CREATE TABLE `net_channel_income` (
 -- ----------------------------
 -- Records of net_channel_income
 -- ----------------------------
+INSERT INTO `net_channel_income` VALUES ('2', 'x1lyuqe', '62.97', '83.74', '20.00', '6.00', '1', '2015-11-01', '1', null, '1', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_channel_income` VALUES ('2', 'x1lyuqe', '99.16', '131.86', '20.00', '6.00', '1', '2015-12-01', '1', null, '1', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_channel_income` VALUES ('2', 'x1lzmct', '0.54', '0.72', '20.00', '6.00', '1', '2015-11-01', '1', null, '3', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_channel_income` VALUES ('2', 'x1lzmct', '2.72', '3.62', '20.00', '6.00', '1', '2015-12-01', '1', null, '3', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_channel_income` VALUES ('2', 'x1ma1fh', '9.81', '13.04', '20.00', '6.00', '1', '2015-12-01', '1', null, '4', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
 
 -- ----------------------------
 -- Table structure for net_configuration
@@ -141,7 +143,7 @@ INSERT INTO `net_configuration` VALUES ('28', 'google', 'client_secret', 'NJHJXV
 INSERT INTO `net_configuration` VALUES ('29', 'google', 'scope', 'https://www.googleapis.com/auth/userinfo.email,https://www.googleapis.com/auth/userinfo.profile', null, '0', '1');
 INSERT INTO `net_configuration` VALUES ('30', 'google', 'url_callback', '/google/register', null, '0', '1');
 INSERT INTO `net_configuration` VALUES ('31', 'google', 'client_id', '130556356834-2sivce7vq4etl3o844g89dfl2265rocs.apps.googleusercontent.com', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('32', 'site', 'contract_file', '/download/contract_mcn_28_12_2015.pdf', null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('32', 'site', 'contract_file', '/download/contract_MCN_-_updated_10_02_2016.pdf', null, '0', '1');
 INSERT INTO `net_configuration` VALUES ('33', 'site', 'pagination', '15', null, '0', '1');
 INSERT INTO `net_configuration` VALUES ('34', 'admin', 'salt', '!@12#$34@*&%', null, '0', '1');
 INSERT INTO `net_configuration` VALUES ('35', 'site', 'payment_notice', 'Please confirm all your information before submitting to us.', null, '0', '1');
@@ -165,12 +167,142 @@ CREATE TABLE `net_earning_date` (
   `impressions` int(10) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`daily_channel_id`,`daily_channel_username`,`earning_date`,`parent_username`)
+  PRIMARY KEY (`daily_channel_id`,`earning_date`,`parent_username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_earning_date
 -- ----------------------------
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-02', '2.060', '548', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-03', '2.580', '863', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-04', '2.210', '775', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-05', '2.050', '737', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-06', '2.720', '851', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-07', '2.530', '853', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-08', '3.240', '1013', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-09', '2.640', '963', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-10', '2.570', '861', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-11', '3.450', '1124', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-12', '2.910', '996', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-13', '3.130', '1014', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-14', '3.630', '1084', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-15', '3.240', '1042', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-16', '3.000', '997', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-17', '3.570', '1027', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-18', '3.300', '726', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-19', '2.410', '714', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-20', '2.780', '848', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-21', '2.910', '878', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-22', '2.390', '821', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-23', '2.200', '665', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-24', '2.420', '670', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-25', '3.760', '1057', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-26', '3.020', '927', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-27', '3.180', '867', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-28', '3.780', '1002', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-29', '3.210', '838', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-11-30', '2.850', '671', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-01', '3.020', '820', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-02', '3.470', '974', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-03', '2.190', '683', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-04', '2.590', '659', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-05', '3.850', '957', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-06', '3.830', '990', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-07', '3.240', '820', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-08', '3.820', '890', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-09', '3.990', '908', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-10', '2.980', '679', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-11', '3.940', '1339', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-12', '11.010', '7000', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-13', '7.170', '3289', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-14', '3.570', '798', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-15', '2.180', '660', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-16', '4.170', '784', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-17', '3.740', '825', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-18', '4.940', '990', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-19', '5.410', '1094', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-20', '4.180', '905', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-21', '4.620', '974', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-22', '5.770', '1098', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-23', '5.520', '1071', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-24', '4.680', '940', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-25', '4.050', '806', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-26', '4.410', '895', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-27', '3.140', '796', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-28', '3.270', '788', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-29', '4.670', '1071', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-30', '4.970', '1200', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lyuqe', 'thamhiemvn2014', 'mcenterntw', '2015-12-31', '3.470', '893', '2016-02-14 16:10:15', '2016-02-14 16:10:15');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-01', '0.000', '1', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-02', '0.020', '5', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-03', '0.010', '3', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-04', '0.010', '5', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-05', '0.010', '4', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-06', '0.000', '1', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-07', '0.040', '16', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-08', '0.000', '3', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-09', '0.010', '6', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-10', '0.050', '15', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-11', '0.020', '6', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-12', '0.010', '5', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-13', '0.010', '7', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-14', '0.040', '7', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-15', '0.010', '7', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-16', '0.010', '4', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-17', '0.010', '2', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-18', '0.000', '1', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-19', '0.030', '10', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-20', '0.070', '15', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-21', '0.020', '4', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-22', '0.030', '10', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-23', '0.010', '4', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-24', '0.020', '6', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-25', '0.030', '9', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-26', '0.130', '41', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-27', '0.050', '22', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-28', '0.040', '8', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-29', '0.010', '3', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-11-30', '0.020', '18', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-01', '0.010', '4', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-02', '0.020', '14', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-03', '0.020', '17', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-04', '0.070', '26', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-05', '0.070', '25', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-06', '0.050', '22', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-07', '0.020', '16', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-08', '0.110', '23', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-09', '0.150', '39', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-10', '0.110', '32', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-11', '0.090', '31', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-12', '0.080', '24', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-13', '0.050', '15', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-14', '0.010', '15', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-15', '0.100', '17', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-16', '0.070', '24', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-17', '0.050', '18', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-18', '0.050', '11', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-19', '0.270', '55', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-20', '0.270', '76', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-21', '0.160', '47', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-22', '0.190', '70', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-23', '0.260', '60', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-24', '0.190', '44', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-25', '0.170', '42', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-26', '0.150', '57', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-27', '0.180', '77', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-28', '0.080', '33', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-29', '0.180', '52', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-30', '0.250', '57', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1lzmct', 'cartoon365', 'mcenterntw', '2015-12-31', '0.140', '32', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1ma1fh', 'fvine', 'mcenterntw', '2015-12-23', '0.010', '5', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1ma1fh', 'fvine', 'mcenterntw', '2015-12-24', '0.310', '76', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1ma1fh', 'fvine', 'mcenterntw', '2015-12-25', '1.210', '285', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1ma1fh', 'fvine', 'mcenterntw', '2015-12-26', '1.660', '397', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1ma1fh', 'fvine', 'mcenterntw', '2015-12-27', '1.430', '386', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1ma1fh', 'fvine', 'mcenterntw', '2015-12-28', '1.270', '278', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1ma1fh', 'fvine', 'mcenterntw', '2015-12-29', '2.630', '502', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1ma1fh', 'fvine', 'mcenterntw', '2015-12-30', '3.100', '946', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_earning_date` VALUES ('x1ma1fh', 'fvine', 'mcenterntw', '2015-12-31', '1.420', '429', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
 
 -- ----------------------------
 -- Table structure for net_home
@@ -187,16 +319,17 @@ CREATE TABLE `net_home` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`home_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_home
 -- ----------------------------
 INSERT INTO `net_home` VALUES ('1', 'stats', 'gross_amount', '0', 'Gross Amount', '', '1', '2016-02-05 22:00:17', '2016-02-05 15:30:07');
-INSERT INTO `net_home` VALUES ('2', 'stats', 'net_mount', '165.39', 'Net Amount', null, '1', '2016-02-05 22:00:17', '2016-02-05 15:47:56');
-INSERT INTO `net_home` VALUES ('3', 'stats', 'pay_amount', '165.39', 'Will pay', null, '1', '2016-02-05 22:00:17', '2016-02-05 15:47:56');
-INSERT INTO `net_home` VALUES ('4', 'stats', 'blocked_mount', '9.81', 'Blocked Amount', null, '1', '2016-02-05 22:00:17', '2016-02-05 15:32:35');
+INSERT INTO `net_home` VALUES ('2', 'stats', 'net_mount', '130.39', 'Net Amount', null, '1', '2016-02-05 22:00:17', '2016-02-14 16:13:04');
+INSERT INTO `net_home` VALUES ('3', 'stats', 'pay_amount', '130.39', 'Will pay', null, '1', '2016-02-05 22:00:17', '2016-02-14 16:13:04');
+INSERT INTO `net_home` VALUES ('4', 'stats', 'blocked_mount', '9.81', 'Blocked Amount', null, '1', '2016-02-05 22:00:17', '2016-02-14 16:01:45');
 INSERT INTO `net_home` VALUES ('5', 'stats', 'hold_amount', '0', 'Hold Amount', 'Amount < 10$', '1', '2016-02-05 22:00:17', '2016-02-05 15:47:56');
+INSERT INTO `net_home` VALUES ('6', 'stats', 'paid_amount', '25', 'Total Paid Amount', null, '1', '2016-02-05 22:00:17', '2016-02-14 16:13:04');
 
 -- ----------------------------
 -- Table structure for net_m_banks
@@ -281,13 +414,13 @@ CREATE TABLE `net_user` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_user
 -- ----------------------------
 INSERT INTO `net_user` VALUES ('1', '7y6seta0201jSKTH1', '', null, 'lmkhang', 'cc4a8fcc6823b2dfa8a5b198a30df279', 'KHANG MINH LE', 'Khang', 'Le', '/assets/img/logo.png', 'nhacso00212@gmail.com', 'nhacso00212@gmail.com', null, null, '499669', '1', null, '1', null, '', '1', '1', '2016-01-24 06:07:03', '2016-01-24 06:07:10');
-INSERT INTO `net_user` VALUES ('2', '7y6seta0201jSKTH1', '', null, 'lmkhang1', 'cc4a8fcc6823b2dfa8a5b198a30df279', '', 'Khang', 'Le', '/assets/img/logo.png', 'nhacso0021@gmail.com', 'nhacso002@gmail.com', '', '', '499669', '1', '/download/contract_mcn_28_12_2015.pdf', '1', 'ec4XCed46ad1e911c3f29a6b87a6eb373b96eaf2fbcd2574944e4e7b3e8cc94702584ifPHF', '', '1', '1', '2016-01-24 06:07:03', '2016-02-02 07:17:57');
+INSERT INTO `net_user` VALUES ('2', '7y6seta0201jSKTH1', '', null, 'lmkhang1', 'cc4a8fcc6823b2dfa8a5b198a30df279', '', 'Khang', 'Le', '/assets/img/logo.png', 'nhacso0021@gmail.com', 'nhacso0023@gmail.com', '', '', '499669', '1', '/download/contract_mcn_28_12_2015.pdf', '1', 'ec4XCed46ad1e911c3f29a6b87a6eb373b96eaf2fbcd2574944e4e7b3e8cc94702584ifPHF', '', '1', '1', '2016-01-24 06:07:03', '2016-02-02 07:17:57');
 INSERT INTO `net_user` VALUES ('3', 'dmFbKuKLaK1msqlB1', '', null, 'lmkhang5', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'kkk', 'lll', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, 'df5e21', '0', null, '1', null, 'bkMOL228150d4d1d537ea17e1162d4af71352bf91200b5b482b08bf7a3980b63198c19iUrZ', '1', '0', '2016-01-30 17:28:59', '2016-01-30 17:28:59');
 INSERT INTO `net_user` VALUES ('4', '9iWvmssE7n1ltwn21', '', null, 'lmkhang5', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'kkk', 'llll', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, 'df5e21', '0', null, '1', null, '7h48efd4eb6a284aeefc4f42b1e5e19a77834475cfaabee09c9291ff384be9477f7df9YTXB', '1', '0', '2016-01-30 17:30:18', '2016-01-30 17:30:18');
 INSERT INTO `net_user` VALUES ('5', 'kOfN9g18XN1te1ky1', '', null, 'lmkhang5', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'kkk', 'llll', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, 'df5e21', '0', null, '1', null, 'c0MQZbee07b1e0d42822f0381e88803f727887086eb6ae38c1c0439d11f7fe88b1e14e2FdQ', '1', '0', '2016-01-30 17:30:38', '2016-01-30 17:30:38');
@@ -321,6 +454,15 @@ INSERT INTO `net_user` VALUES ('32', 'fr1IRe3INs1dQbCl1', '', null, 'lmkhang5', 
 INSERT INTO `net_user` VALUES ('33', 'juYYtkBOcH1bERQ41', '', null, 'lmkhang5', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'kkkk', 'llll', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, '250b86', '0', null, '1', null, 'freeIe9b0cc6250af601d9eca6f723d26eed9cbecfffb280a0feef3e860bb5863a75biP1w7', '1', '0', '2016-01-30 19:15:46', '2016-01-30 19:15:46');
 INSERT INTO `net_user` VALUES ('34', 'kQXBWnl0y31pQF781', '', null, 'lmkhang5', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'kkkk', 'llll', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, '250b86', '0', null, '1', null, 'iP5eVb7af3a6666323430cff47b235c9586e8bf1228051b257077cfbd05b68359f4047jMtm', '1', '0', '2016-01-30 19:18:09', '2016-01-30 19:18:09');
 INSERT INTO `net_user` VALUES ('35', 'a1CFieIn0O1wvu9r1', '', null, 'lmkhang5', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'kkkk', 'llll', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, '250b86', '0', null, '1', null, 'htaGX611e172e3716d8853389fc1af0bd27baf9d2d8e7b6097f062e0f1d18e480759eg7fM8', '1', '0', '2016-01-30 19:18:23', '2016-01-30 19:18:23');
+INSERT INTO `net_user` VALUES ('36', 'ksyyiofYOB1ljfTf1', '', null, 'lmkhang2', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'aa', 'sss', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, '499669', '0', null, '1', null, '9Ddf384b1185890fd633f8e014ebb9f7796e40b4d8b004f37007a7c4d0b81e8f356e4j6DDr', '1', '0', '2016-02-15 08:02:07', '2016-02-15 08:02:07');
+INSERT INTO `net_user` VALUES ('37', 'bF9KtfK7tF1umYvN1', '', null, 'lmkhang2', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'aa', 'ssss', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, 'df5e21', '0', null, '1', null, 'aZchZb7f6a592ac1b11f1f8053d043c5b014bcac92774617cfbf0b41fe3923dd8df78h4PoY', '1', '0', '2016-02-15 08:04:46', '2016-02-15 08:04:46');
+INSERT INTO `net_user` VALUES ('38', 'cl7PCoNPx41nOVdV1', '', null, 'lmkhang2', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'aa', 'ssss', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, 'df5e21', '0', null, '1', null, 'en0cs769c20bd0fdc391d0bd985aacd9a0ad1afbb5e00939f6865c931738375499f8df2XEK', '1', '0', '2016-02-15 08:05:10', '2016-02-15 08:05:10');
+INSERT INTO `net_user` VALUES ('39', 'd167pjeGAn1iGQDy1', '', null, 'lmkhang2', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'aa', 'ssss', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, 'df5e21', '0', null, '1', null, 'ksE8V079245d2d7ffad850608b2f2c4911166f228a85badccfab6172fbf3ac5dd56ecksE8V', '1', '0', '2016-02-15 08:05:42', '2016-02-15 08:05:42');
+INSERT INTO `net_user` VALUES ('40', 'ajgMKlKlep1ljgS91', '', null, 'lmkhang2', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'aa', 'ssss', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, 'df5e21', '0', null, '1', null, '8hopNcbc9968e2d2b036184f5b9cdeab01f9c9796a8d93128f96b1c6ab8f7dae5c49djMHbi', '1', '0', '2016-02-15 08:06:01', '2016-02-15 08:06:01');
+INSERT INTO `net_user` VALUES ('41', '8hoXDlXSv01qESRq1', '', null, 'lmkhang2', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'aa', 'ssss', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, 'df5e21', '0', null, '1', null, 'ksFbp4ddb468ee3ff24bdf42f21182dccb644a4a5d789e30c3d422dfac3e343c929c4jMHJh', '1', '0', '2016-02-15 08:06:22', '2016-02-15 08:06:22');
+INSERT INTO `net_user` VALUES ('42', 'hKPIOkxTTg1jeGOr1', '', null, 'lmkhang2', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'aa', 'ssss', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, 'df5e21', '0', null, '1', null, '8hpkja2ca1baa2b717f1bc177959df88d63a206a1f352537024d6aa5858338daa28ef7BrS1', '1', '0', '2016-02-15 08:06:36', '2016-02-15 08:06:36');
+INSERT INTO `net_user` VALUES ('43', 'dH5lttaxxM1g4qLA1', '', null, 'lmkhang2', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'aa', 'ssss', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, 'df5e21', '0', null, '1', null, 'en2NA880ec7793c360b2994d52e3a7bc97b19b25a29fc678dfb956702eda49b90a604iqNxy', '1', '0', '2016-02-15 08:06:50', '2016-02-15 08:06:50');
+INSERT INTO `net_user` VALUES ('44', '8Xu96qEU6I1nh6P41', '', null, 'lmkhang2', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'aa', 'ssss', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, '7a0885', '0', null, '1', null, 'iqUxuf276aaad9c5d9f2e6fde1a2fb6ac216be9ab7600cf500dbd6637f33c775debf4ajp3D', '1', '0', '2016-02-15 08:11:19', '2016-02-15 08:11:19');
 
 -- ----------------------------
 -- Table structure for net_user_income_expenditure
@@ -334,9 +476,10 @@ CREATE TABLE `net_user_income_expenditure` (
   `currency` double(15,2) DEFAULT NULL COMMENT 'For Payment',
   `tax_pay_bank` double(15,2) DEFAULT NULL COMMENT 'For Payment',
   `payment_method` tinyint(1) DEFAULT '1' COMMENT '1: Sharemoney (Bank), 2: Paypal, 3: Other -- For Payment',
-  `original_amount` double(15,2) DEFAULT NULL COMMENT 'For Import from CSV or Paymen before Fee',
+  `original_amount` double(15,2) DEFAULT NULL COMMENT 'For Import from CSV or Payment before Fee',
   `currency_string` varchar(5) DEFAULT '' COMMENT '$ or VND',
-  `type` tinyint(1) DEFAULT '1' COMMENT '1: income, 2: withdraw',
+  `is_payment` tinyint(1) DEFAULT '2' COMMENT '1: Payment, 2: Not',
+  `type` tinyint(1) DEFAULT '1' COMMENT '1: +, 2: -',
   `date` datetime NOT NULL,
   `action` tinyint(1) DEFAULT '1' COMMENT '1: system, 2: people',
   `reason` text,
@@ -349,6 +492,12 @@ CREATE TABLE `net_user_income_expenditure` (
 -- ----------------------------
 -- Records of net_user_income_expenditure
 -- ----------------------------
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '63.51', '6.00', '20.00', '0.00', '0.00', '0', '84.46', '$', '2', '1', '2015-11-01 00:00:00', '1', 'Processed by System', '1', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '101.88', '6.00', '20.00', '0.00', '0.00', '0', '135.48', '$', '2', '1', '2015-12-01 00:00:00', '1', 'Processed by System', '1', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '9.81', '6.00', '20.00', '0.00', '0.00', '0', '13.04', '$', '2', '1', '2015-12-01 00:00:00', '1', 'Processed by System', '2', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '10.00', '0.00', '0.00', '21222.00', '10000.00', '1', '10.00', '$', '1', '2', '2016-02-14 00:00:00', '2', 'Payment for February 2016 (Dailymotion)', '1', '2016-02-14 16:10:32', '2016-02-14 16:10:32');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '10.00', '0.00', '0.00', '0.00', '0.00', '0', '10.00', '$', '2', '2', '2016-02-14 00:00:00', '2', '', '1', '2016-02-14 16:10:36', '2016-02-14 16:10:36');
+INSERT INTO `net_user_income_expenditure` VALUES ('2', '15.00', '0.00', '0.00', '21222.00', '10000.00', '1', '15.00', '$', '1', '2', '2016-02-14 00:00:00', '2', 'Payment for February 2016 (Dailymotion)', '1', '2016-02-14 16:11:06', '2016-02-14 16:11:06');
 
 -- ----------------------------
 -- Table structure for net_user_stats
@@ -369,4 +518,13 @@ CREATE TABLE `net_user_stats` (
 -- Records of net_user_stats
 -- ----------------------------
 INSERT INTO `net_user_stats` VALUES ('1', '0.00', '0.00', '1', '1', '2016-01-24 06:07:03', '2016-02-02 10:36:42');
-INSERT INTO `net_user_stats` VALUES ('2', '0.00', '0.00', '1', '1', '2016-01-24 06:07:03', '2016-02-05 14:55:28');
+INSERT INTO `net_user_stats` VALUES ('2', '130.39', '9.81', '1', '1', '2016-01-24 06:07:03', '2016-02-14 16:11:06');
+INSERT INTO `net_user_stats` VALUES ('36', '0.00', '0.00', '1', '0', '2016-02-15 08:02:07', '2016-02-15 08:02:07');
+INSERT INTO `net_user_stats` VALUES ('37', '0.00', '0.00', '1', '0', '2016-02-15 08:04:46', '2016-02-15 08:04:46');
+INSERT INTO `net_user_stats` VALUES ('38', '0.00', '0.00', '1', '0', '2016-02-15 08:05:10', '2016-02-15 08:05:10');
+INSERT INTO `net_user_stats` VALUES ('39', '0.00', '0.00', '1', '0', '2016-02-15 08:05:42', '2016-02-15 08:05:42');
+INSERT INTO `net_user_stats` VALUES ('40', '0.00', '0.00', '1', '0', '2016-02-15 08:06:01', '2016-02-15 08:06:01');
+INSERT INTO `net_user_stats` VALUES ('41', '0.00', '0.00', '1', '0', '2016-02-15 08:06:22', '2016-02-15 08:06:22');
+INSERT INTO `net_user_stats` VALUES ('42', '0.00', '0.00', '1', '0', '2016-02-15 08:06:36', '2016-02-15 08:06:36');
+INSERT INTO `net_user_stats` VALUES ('43', '0.00', '0.00', '1', '0', '2016-02-15 08:06:50', '2016-02-15 08:06:50');
+INSERT INTO `net_user_stats` VALUES ('44', '0.00', '0.00', '1', '0', '2016-02-15 08:11:19', '2016-02-15 08:11:19');
