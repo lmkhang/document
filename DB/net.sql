@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-02-17 16:30:04
+Date: 2016-02-21 00:40:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -57,7 +57,7 @@ CREATE TABLE `net_channel` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`channel_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_channel
@@ -104,55 +104,57 @@ CREATE TABLE `net_configuration` (
   `name` varchar(50) DEFAULT NULL,
   `value` varchar(200) DEFAULT NULL,
   `title` varchar(200) DEFAULT NULL,
+  `description` text,
   `show` tinyint(1) DEFAULT '0' COMMENT '0: Hide, 1: Show',
   `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: activated, 2: deactivated',
   PRIMARY KEY (`config_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_configuration
 -- ----------------------------
-INSERT INTO `net_configuration` VALUES ('1', 'daily', 'api_key', 'a634a114cb1c91dcef77', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('2', 'daily', 'url_add_channel', 'https://www.dailymotion.com/oauth/authorize?response_type=code&client_id={API_KEY}&redirect_uri={URL_CALLBACK}&scope=email+userinfo+manage_videos+manage_subscriptions', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('3', 'daily', 'api_secret', '41c8909cedb7b9a87ddfde60d002bcde48c908ad', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('4', 'daily', 'url_callback', '/dailymotion/register?', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('5', 'daily', 'get_token', 'https://api.dailymotion.com/oauth/token', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('6', 'social_ntw', 'fb', 'https://www.facebook.com/mcenterntw/', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('7', 'social_ntw', 'google', 'https://plus.google.com/u/2/114898032833350678488', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('8', 'social_ntw', 'twitter', '#', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('9', 'social_ntw', 'tumblr', '#', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('10', 'social_ntw', 'pinterest', 'https://www.pinterest.com/mediacenternetw/', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('11', 'social_ntw', 'dribbble', '#', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('12', 'site', 'contact_email', 'contact@mcenterntw.com', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('13', 'site', 'description', 'The Multi Channel Network on Dailymotion for people working at home with lots of convenience', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('14', 'site', 'keywords', 'dailymotion, dailymotion monetization, make money online, mmo, dailymotion network, media center network, mcn, mcn dailymotion', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('15', 'social_ntw', 'skype', 'https://join.skype.com/t5flexE0PVAH', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('16', 'site', 'salt', '!@12#$34', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('17', 'daily', 'url_join', 'https://www.dailymotion.com/oauth/authorize?response_type=code&client_id={API_KEY}&redirect_uri={URL_CALLBACK}&scope=email+userinfo', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('18', 'fb', 'api_key', '1701752836736380', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('19', 'fb', 'api_secret', 'd9a59f4497d3e630fc5ca15b1d94d635', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('20', 'fb', 'scope', 'email,public_profile', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('21', 'fb', 'url_callback', '/facebook/register', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('22', 'site', 'active_expire', '24', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('23', 'daily', 'url_callback_channel', '/dashboard/channels/dailymotion/add?', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('24', 'daily', 'api_key_channel', 'e26d630f8cce18292850', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('25', 'daily', 'api_secret_channel', 'fa8c66cbfe58995ce839dc8b93549453bf7b07af', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('26', 'daily', 'url_get_info', 'https://api.dailymotion.com/user/{USER_ID}?fields=id,username,email,country,avatar_120_url,first_name,last_name,fullname,screenname', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('27', 'google', 'api_key', 'AIzaSyA-ULa6KfLJRjT5WM_0Usd-Yk9QdIh1zYQ', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('28', 'google', 'client_secret', 'NJHJXVNh0YfgL1GLeRnX2me_', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('29', 'google', 'scope', 'https://www.googleapis.com/auth/userinfo.email,https://www.googleapis.com/auth/userinfo.profile', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('30', 'google', 'url_callback', '/google/register', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('31', 'google', 'client_id', '130556356834-2sivce7vq4etl3o844g89dfl2265rocs.apps.googleusercontent.com', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('32', 'site', 'contract_file', '/download/contract_MCN_-_updated_10_02_2016.pdf', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('33', 'site', 'pagination', '15', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('34', 'admin', 'salt', '!@12#$34@*&%', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('35', 'site', 'payment_notice', 'Please confirm all your information before submitting to us.', null, '0', '1');
-INSERT INTO `net_configuration` VALUES ('36', 'payment', 'minpay', '10', 'Min Pay', '1', '1');
-INSERT INTO `net_configuration` VALUES ('37', 'payment', 'tax_from_daily', '6', 'Tax From Daily', '1', '1');
-INSERT INTO `net_configuration` VALUES ('38', 'payment', 'commission', '20', 'Commission', '1', '1');
-INSERT INTO `net_configuration` VALUES ('39', 'payment', 'currency', '21222', 'Currency', '1', '1');
-INSERT INTO `net_configuration` VALUES ('40', 'payment', 'tax_pay_bank', '10000', 'Tax Pay from Bank', '1', '1');
-INSERT INTO `net_configuration` VALUES ('41', 'daily', 'url_stats', 'http://dailymotion.com/stats/{channel_name}', null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('1', 'daily', 'api_key', 'a634a114cb1c91dcef77', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('2', 'daily', 'url_add_channel', 'https://www.dailymotion.com/oauth/authorize?response_type=code&client_id={API_KEY}&redirect_uri={URL_CALLBACK}&scope=email+userinfo+manage_videos+manage_subscriptions', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('3', 'daily', 'api_secret', '41c8909cedb7b9a87ddfde60d002bcde48c908ad', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('4', 'daily', 'url_callback', '/dailymotion/register?', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('5', 'daily', 'get_token', 'https://api.dailymotion.com/oauth/token', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('6', 'social_ntw', 'fb', 'https://www.facebook.com/mcenterntw/', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('7', 'social_ntw', 'google', 'https://plus.google.com/u/2/114898032833350678488', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('8', 'social_ntw', 'twitter', '#', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('9', 'social_ntw', 'tumblr', '#', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('10', 'social_ntw', 'pinterest', 'https://www.pinterest.com/mediacenternetw/', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('11', 'social_ntw', 'dribbble', '#', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('12', 'site', 'contact_email', 'contact@mcenterntw.com', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('13', 'site', 'description', 'The Multi Channel Network on Dailymotion for people working at home with lots of convenience', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('14', 'site', 'keywords', 'dailymotion, dailymotion monetization, make money online, mmo, dailymotion network, media center network, mcn, mcn dailymotion', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('15', 'social_ntw', 'skype', 'https://join.skype.com/t5flexE0PVAH', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('16', 'site', 'salt', '!@12#$34', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('17', 'daily', 'url_join', 'https://www.dailymotion.com/oauth/authorize?response_type=code&client_id={API_KEY}&redirect_uri={URL_CALLBACK}&scope=email+userinfo', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('18', 'fb', 'api_key', '1701752836736380', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('19', 'fb', 'api_secret', 'd9a59f4497d3e630fc5ca15b1d94d635', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('20', 'fb', 'scope', 'email,public_profile', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('21', 'fb', 'url_callback', '/facebook/register', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('22', 'site', 'active_expire', '24', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('23', 'daily', 'url_callback_channel', '/dashboard/channels/dailymotion/add?', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('24', 'daily', 'api_key_channel', 'e26d630f8cce18292850', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('25', 'daily', 'api_secret_channel', 'fa8c66cbfe58995ce839dc8b93549453bf7b07af', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('26', 'daily', 'url_get_info', 'https://api.dailymotion.com/user/{USER_ID}?fields=id,username,email,country,avatar_120_url,first_name,last_name,fullname,screenname', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('27', 'google', 'api_key', 'AIzaSyA-ULa6KfLJRjT5WM_0Usd-Yk9QdIh1zYQ', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('28', 'google', 'client_secret', 'NJHJXVNh0YfgL1GLeRnX2me_', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('29', 'google', 'scope', 'https://www.googleapis.com/auth/userinfo.email,https://www.googleapis.com/auth/userinfo.profile', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('30', 'google', 'url_callback', '/google/register', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('31', 'google', 'client_id', '130556356834-2sivce7vq4etl3o844g89dfl2265rocs.apps.googleusercontent.com', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('32', 'site', 'contract_file', '/download/contract_MCN_-_updated_10_02_2016.pdf', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('33', 'site', 'pagination', '15', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('34', 'admin', 'salt', '!@12#$34@*&%', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('35', 'site', 'payment_notice', 'Please confirm all your information before submitting to us.', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('36', 'payment', 'minpay', '10', 'Min Pay', null, '1', '1');
+INSERT INTO `net_configuration` VALUES ('37', 'payment', 'tax_from_daily', '6', 'Tax From Daily', null, '1', '1');
+INSERT INTO `net_configuration` VALUES ('38', 'payment', 'commission', '20', 'Commission', null, '1', '1');
+INSERT INTO `net_configuration` VALUES ('39', 'payment', 'currency', '21222', 'Currency', null, '1', '1');
+INSERT INTO `net_configuration` VALUES ('40', 'payment', 'tax_pay_bank', '10000', 'Tax Pay from Bank', null, '1', '1');
+INSERT INTO `net_configuration` VALUES ('41', 'daily', 'url_stats', 'http://dailymotion.com/stats/{channel_name}', null, null, '0', '1');
+INSERT INTO `net_configuration` VALUES ('42', 'payment', 'lock', '0', 'Lock Updating Payment', '1: Lock - 0: Unlock', '1', '1');
 
 -- ----------------------------
 -- Table structure for net_earning_date
@@ -305,6 +307,32 @@ INSERT INTO `net_earning_date` VALUES ('x1ma1fh', 'fvine', 'mcenterntw', '2015-1
 INSERT INTO `net_earning_date` VALUES ('x1ma1fh', 'fvine', 'mcenterntw', '2015-12-31', '1.420', '429', '2016-02-14 16:10:16', '2016-02-14 16:10:16');
 
 -- ----------------------------
+-- Table structure for net_faq
+-- ----------------------------
+DROP TABLE IF EXISTS `net_faq`;
+CREATE TABLE `net_faq` (
+  `faq_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `number` int(5) DEFAULT NULL,
+  `question` varchar(250) DEFAULT NULL,
+  `answer` text,
+  `del_flg` tinyint(1) DEFAULT '1' COMMENT '1: active; 0: deactive',
+  PRIMARY KEY (`faq_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of net_faq
+-- ----------------------------
+INSERT INTO `net_faq` VALUES ('1', '1', 'What is the criterion of application?', '•	You should upload 5 – 10 videos and gain some views to let MCN networks qualify your channel based on your channel performance. Your channel should have banner, logo and a specific name. You need to drop down some words in description.', '1');
+INSERT INTO `net_faq` VALUES ('2', '2', 'How long can my channel join the MCN network?', '•	The time is around 5-7 working days.', '1');
+INSERT INTO `net_faq` VALUES ('3', '3', 'Why does my application get denied?', '•	The network refuses any applications when violating one of these factors including sexual, nudity and violent contents. Furthermore, the network does not allow any channels having a signal of spamming.', '1');
+INSERT INTO `net_faq` VALUES ('4', '4', 'Why does my channel unlink from the network?', '•	You may intentionally violate the network rules.', '1');
+INSERT INTO `net_faq` VALUES ('5', '5', 'How long does my dashboard get updated?', '•	Your earning will frequently update in the 15th of each months.', '1');
+INSERT INTO `net_faq` VALUES ('6', '6', 'What is the specific day that I get my earning?', '•	The payment day is between the days of 7 to 10 each month.', '1');
+INSERT INTO `net_faq` VALUES ('7', '7', 'Why doesn’t my dashboard update the payment?', '•	You need to contact to our support to resolve this problem.', '1');
+INSERT INTO `net_faq` VALUES ('8', '8', 'Can I change my payment method?', '•	Currently, the network offers only bank service. We are working out with others payment entities to open more payment services.', '1');
+INSERT INTO `net_faq` VALUES ('9', '9', 'Can I get my earnings when my channel has a suspension?', '•	It means you seriously violate Dailymotion as well as the network rules. Therefore, Dailymotion will hold your earnings.', '1');
+
+-- ----------------------------
 -- Table structure for net_home
 -- ----------------------------
 DROP TABLE IF EXISTS `net_home`;
@@ -319,7 +347,7 @@ CREATE TABLE `net_home` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`home_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_home
@@ -330,6 +358,10 @@ INSERT INTO `net_home` VALUES ('3', 'stats', 'pay_amount', '130.39', 'Will pay',
 INSERT INTO `net_home` VALUES ('4', 'stats', 'blocked_mount', '9.81', 'Blocked Amount', null, '1', '2016-02-05 22:00:17', '2016-02-14 16:01:45');
 INSERT INTO `net_home` VALUES ('5', 'stats', 'hold_amount', '0', 'Hold Amount', 'Amount < 10$', '1', '2016-02-05 22:00:17', '2016-02-05 15:47:56');
 INSERT INTO `net_home` VALUES ('6', 'stats', 'paid_amount', '25', 'Total Paid Amount', null, '1', '2016-02-05 22:00:17', '2016-02-14 16:13:04');
+INSERT INTO `net_home` VALUES ('7', 'stats_show', 'total_sub', '23124', 'Total follower', null, '1', '2016-02-05 22:00:17', '2016-02-20 17:32:48');
+INSERT INTO `net_home` VALUES ('8', 'stats_show', 'total_like', '13123123', 'Total liker', null, '1', '2016-02-05 22:00:17', '2016-02-20 17:32:48');
+INSERT INTO `net_home` VALUES ('9', 'stats_show', 'total_view', '5435', 'Total views', null, '1', '2016-02-05 22:00:17', '2016-02-20 17:32:48');
+INSERT INTO `net_home` VALUES ('10', 'stats_show', 'total_channels', '4324', 'Total channels', null, '1', '2016-02-05 22:00:17', '2016-02-20 17:32:48');
 
 -- ----------------------------
 -- Table structure for net_m_banks
@@ -414,7 +446,7 @@ CREATE TABLE `net_user` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of net_user
@@ -463,6 +495,7 @@ INSERT INTO `net_user` VALUES ('41', '8hoXDlXSv01qESRq1', '', null, 'lmkhang2', 
 INSERT INTO `net_user` VALUES ('42', 'hKPIOkxTTg1jeGOr1', '', null, 'lmkhang2', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'aa', 'ssss', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, 'df5e21', '0', null, '1', null, '8hpkja2ca1baa2b717f1bc177959df88d63a206a1f352537024d6aa5858338daa28ef7BrS1', '1', '0', '2016-02-15 08:06:36', '2016-02-15 08:06:36');
 INSERT INTO `net_user` VALUES ('43', 'dH5lttaxxM1g4qLA1', '', null, 'lmkhang2', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'aa', 'ssss', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, 'df5e21', '0', null, '1', null, 'en2NA880ec7793c360b2994d52e3a7bc97b19b25a29fc678dfb956702eda49b90a604iqNxy', '1', '0', '2016-02-15 08:06:50', '2016-02-15 08:06:50');
 INSERT INTO `net_user` VALUES ('44', '8Xu96qEU6I1nh6P41', '', null, 'lmkhang2', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'aa', 'ssss', '/assets/img/logo.png', 'nhacso002@gmail.com', null, null, null, '7a0885', '0', null, '1', null, 'iqUxuf276aaad9c5d9f2e6fde1a2fb6ac216be9ab7600cf500dbd6637f33c775debf4ajp3D', '1', '0', '2016-02-15 08:11:19', '2016-02-15 08:11:19');
+INSERT INTO `net_user` VALUES ('45', 'dm9RXrmSPU1joQMt1', '', null, 'leeminhkhang', 'cc4a8fcc6823b2dfa8a5b198a30df279', null, 'asdsd', 'ddddd', '/assets/img/logo.png', 'dangthanhphong@gmail.com', null, null, null, '330399', '0', null, '1', null, 'fo2f0f6dd7b1ce24f13839b8bf4e768ded7797d56b2247a655a47522f0ebb189a831b9YmA8', '1', '0', '2016-02-20 13:08:56', '2016-02-20 13:08:56');
 
 -- ----------------------------
 -- Table structure for net_user_income_expenditure
@@ -528,3 +561,4 @@ INSERT INTO `net_user_stats` VALUES ('41', '0.00', '0.00', '1', '0', '2016-02-15
 INSERT INTO `net_user_stats` VALUES ('42', '0.00', '0.00', '1', '0', '2016-02-15 08:06:36', '2016-02-15 08:06:36');
 INSERT INTO `net_user_stats` VALUES ('43', '0.00', '0.00', '1', '0', '2016-02-15 08:06:50', '2016-02-15 08:06:50');
 INSERT INTO `net_user_stats` VALUES ('44', '0.00', '0.00', '1', '0', '2016-02-15 08:11:19', '2016-02-15 08:11:19');
+INSERT INTO `net_user_stats` VALUES ('45', '0.00', '0.00', '1', '0', '2016-02-20 13:08:56', '2016-02-20 13:08:56');
